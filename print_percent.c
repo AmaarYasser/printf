@@ -8,6 +8,7 @@
 
 int print_percent(va_list ptr)
 {
-	_putchar('%');
+	if (ptr)
+		_putchar('%');
 	return (1);
 }

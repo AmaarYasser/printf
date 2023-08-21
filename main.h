@@ -29,7 +29,6 @@ int print_hex_upper_X(va_list ptr);
 int print_hex_lower_x(va_list ptr);
 int print_octal(va_list ptr);
 int print_unsigned(va_list ptr);
-specifiers_format *specifier_fun(void);
 
 /**
  * specifiers - struct ...
@@ -43,4 +42,5 @@ typedef struct specifiers
 	int (*f)(va_list);
 } specifiers_format;
 
+specifiers_format *specifier_fun(void);
 #endif

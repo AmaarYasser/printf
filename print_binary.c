@@ -39,4 +39,5 @@ int print_binary(va_list ptr)
 		charCount++;
 		i--;
 	}
+	return (charCount);
 }
