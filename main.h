@@ -1,26 +1,18 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/**
- * include all used libraries
- * 
-*/
-
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <string.h>
-/**
- * define used macros
-*/
+
 #define BUFFER_SIZE 1024
 #define NULL_STRING "(null)"
 /**
  * _printf - format like printf
  * @format: format array string
- * 
  * Return: counter of chars
 */
 
@@ -37,7 +29,7 @@ int print_hex_upper_X(va_list ptr);
 int print_hex_lower_x(va_list ptr);
 int print_octal(va_list ptr);
 int print_unsigned(va_list ptr);
-specifiers_format *specifier_fun ();
+specifiers_format *specifier_fun(void);
 
 /**
  * specifiers - struct ...
@@ -45,9 +37,10 @@ specifiers_format *specifier_fun ();
  * @f: ...
 */
 
-typedef struct specifiers {
-    char *specifier_id;
-    int (*f)(va_list);
-}specifiers_format;
+typedef struct specifiers
+{
+	char *specifier_id;
+	int (*f)(va_list);
+} specifiers_format;
 
 #endif
