@@ -8,43 +8,18 @@
 
 int print_decimal(va_list ptr)
 {
-	int number, index, digit, charCount, i;
-	char tmp[12];
+	unsigned int n;
+	int myValue, len = 0, divisor = 1;
 
-	number = va_arg(ptr, int);
-	charCount = 0, index = 0;
-
-	/**  Handle negative numbers */
-
-	if (number < 0)
+	myValue  = va_arg(ptr, int);
+	len += (myValue < 0) ? (_putchar('-'), n = -myValue) : (n = myValue);
+	while (n / divisor > 9)
+		divisor *= 10;
+	while (divisor != 0)
 	{
-		_putchar('-');
-		number = -number;
-		charCount++;
+		len += _putchar('0' + n / divisor);
+		n %= divisor;
+		divisor /= 10;
 	}
-
-	/** Convert number to string - Maximum length of an int + sign => 12 */
-
-	if (number != 0)
-	{
-		while (number > 0)
-		{
-			digit = number % 10;
-			tmp[index++] = '0' + digit;
-			number /= 10;
-		}
-	}
-	else
-		tmp[index++] = '0';
-
-	/** Print the number in reverse order */
-
-	i = index - 1;
-	while (i >= 0)
-	{
-		_putchar(tmp[i]);
-		i--;
-		charCount++;
-	}
-	return (charCount);
+	return (len);
 }
