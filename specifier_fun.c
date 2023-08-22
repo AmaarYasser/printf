@@ -14,7 +14,7 @@ specifiers_format *specifier_fun(void)
 		{"i", print_decimal}, {"b", print_binary},
 		{"u", print_unsigned}, {"o", print_octal},
 		{"x", print_hex_lower_x}, {"X", print_hex_upper_X},
-		{"S", print_string}, {NULL, NULL}
+		{"S", print_custom_string}, {NULL, NULL}
 	};
 	return (specifier);
 }
