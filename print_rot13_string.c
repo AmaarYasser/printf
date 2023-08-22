@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * print_rot13_string - ....
@@ -17,7 +17,7 @@ int print_rot13_string(va_list ptr)
 	/** check if null string */
 
 	if (!str)
-		return _puts(NULL_STRING);
+		return (_puts(NULL_STRING));
 
 	while (str[i] != '\0')
 	{
