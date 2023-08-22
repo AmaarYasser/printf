@@ -21,6 +21,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '%')
+				charCount++;
 			j = 0;
 			while (specifier[j].specifier_id)
 			{
